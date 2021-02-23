@@ -21,27 +21,40 @@ If you get stuck here refer to first pages of react-router documentation. I lite
 
 function App() {
   return (
-    <main className="App h-screen bg-red-100">
-      <div className="w-6/12 pt-4 mx-auto">
-        <Router>
-          <div>
-            <nav>
-              <ul className="flex poke-font justify-between">
-                <li className="mr-4">
-                  <Link to="/">Home</Link>
-                </li>
-                <li className="mr-4">
-                  <Link to="/pokemons">Pokemons</Link>
-                </li>
-                <li className="mr-4">
-                  <Link to="/favourites">Favourites</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </Router>
-      </div>
-    </main>
+    <Router>
+      <main className="App bg-red-100" style={{minHeight: '100vh'}}>
+        <div className="w-6/12 pt-4 mx-auto">
+            <div>
+              <nav>
+                <ul className="flex poke-font justify-between">
+                  <li className="mr-4">
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li className="mr-4">
+                    <Link to="/pokemons">Pokemons</Link>
+                  </li>
+                  <li className="mr-4">
+                    <Link to="/favourites">Favourites</Link>
+                  </li>
+                </ul>
+              </nav>
+                <div className="content">
+                  <Switch>
+                    <Route exact path="/">
+                      <Home/>
+                    </Route>
+                    <Route path="/pokemons">
+                      <Pokemons/>
+                    </Route>
+                    <Route path="/favourites">
+                      <Favourites/>
+                    </Route>
+                  </Switch>
+                </div>
+            </div>
+        </div>
+      </main>
+    </Router>
   );
 }
 
