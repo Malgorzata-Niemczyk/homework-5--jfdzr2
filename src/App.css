@@ -1,3 +1,26 @@
 .poke-font {
   font-family: "pokemon-font";
 }
+
+.pokemons-list-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+  grid-template-rows: repeat(auto-fit, minmax(350px, 5vw));
+  margin: 30px 0;
+  text-align: center;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  max-height: 2800px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.pokemon-card:hover {
+  color: white;
+}
