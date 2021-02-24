@@ -44,7 +44,7 @@ function App() {
                     <Route exact path="/">
                       <Home/>
                     </Route>
-                    <Route path="/pokemons">
+                    <Route exact path="/pokemons">
                       <Pokemons/>
                     </Route>
                     <Route path="/pokemons/:id">
