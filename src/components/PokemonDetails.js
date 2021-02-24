@@ -32,6 +32,21 @@ const PokemonDetails = () => {
             <div className="pokemon-details-wrapper text-white poke-font">
                 { error ? (<p className="poke-font py-6 text-center">{ errorMessage }</p>) : null }
                 { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
+                {pokemonData && (
+                    <div className="pokemon-details-card bg-red-700">
+                        <Title>#{pokemonData.id}: {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</Title>
+                        <div className="images">
+                            <img src={pokemonData.sprites.front_default} alt="pokemon image" />
+                        </div>
+                        <div className="pokemon-details-card-text">
+                            <h3>Pokemon Info</h3>
+                            <p>Species: </p>
+                            <p>Height: {pokemonData.height}</p>
+                            <p>Weight: {pokemonData.weight}</p>
+                            <p>Types: </p>
+                        </div>
+                    </div>
+                )}
             </div>
         </Page> 
      );
