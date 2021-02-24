@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './App.css';
+import PokemonDetails from "./components/PokemonDetails";
 import { Favourites } from "./views/favourites/favourites";
 import { Home } from "./views/home/home";
 import { Pokemons } from "./views/pokemons/pokemons";
@@ -45,6 +46,9 @@ function App() {
                     </Route>
                     <Route path="/pokemons">
                       <Pokemons/>
+                    </Route>
+                    <Route path="/pokemons/:id">
+                      <PokemonDetails/>
                     </Route>
                     <Route path="/favourites">
                       <Favourites/>
