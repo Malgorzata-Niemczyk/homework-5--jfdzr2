@@ -1,12 +1,41 @@
 import { Page } from "../../components/page";
 import { Title } from "../../components/title";
-import { pokeApiResponse } from "../../utils/sampleResponse";
+// import { pokeApiResponse } from "../../utils/sampleResponse";
+import { useState, useEffect } from 'react';
+import PokemonsList from "../../components/PokemonsList"
+import axios from "axios";
 
 export function Pokemons() {
+  const [pokemons, setPokemons] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    axios.get('https://pokeapi.co/api/v2/pokemon')
+      .then(res => {
+        setPokemons(res.data.results)
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err)
+        setError(true);
+        setErrorMessage('Could not fetch the data :(')
+        setIsLoading(false);
+      })
+  }, []);
+
   return (
     <Page>
       <Title>Pokemons list</Title>
-      <p className="text-white py-6 text-center">
+        { error ? (<p className="text-white poke-font py-6 text-center">{ errorMessage }</p>) : null }
+        { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
+        <ol className="pokemons-list-wrapper">
+          { pokemons && pokemons.map((pokemons, index) =>
+            <PokemonsList key={pokemons.name} pokemons={pokemons} index={index} /> )}
+        </ol>
+        
+      {/* <p className="text-white py-6 text-center">
         Here will be list of pokemons from pokeapi
       </p>
       <ol className="text-white list-decimal">
@@ -61,7 +90,7 @@ export function Pokemons() {
             #{index + 1} - {pokemon.name}
           </li>
         ))}
-      </ol>
+      </ol> */}
     </Page>
   );
 }
