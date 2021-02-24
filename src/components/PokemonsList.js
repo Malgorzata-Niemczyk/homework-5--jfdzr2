@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
+import { Link } from "react-router-dom"
 
 const PokemonsList = ({ pokemons, index }) => {
     // console.log(pokemons)
@@ -14,11 +15,13 @@ const PokemonsList = ({ pokemons, index }) => {
     }, [pokemons]);
 
     return ( 
-       <li className="pokemon-card poke-font hover:bg-red-700 cursor-pointer">
-            <img src={pokemonPic} alt="Pokemon image" />
-            <p>#{index + 1}</p>
-            <p>{pokemons.name}</p>
-       </li>
+        <Link to={`/pokemons/${pokemons.id}`}>
+            <li className="pokemon-card poke-font hover:bg-red-700 cursor-pointer">
+                <img src={pokemonPic} alt="Pokemon image" />
+                <p>#{index + 1}</p>
+                <p>{pokemons.name}</p>
+            </li>
+        </Link>
      );
 }
  
