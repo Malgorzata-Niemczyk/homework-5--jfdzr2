@@ -39,7 +39,12 @@ const PokemonDetails = () => {
                 { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
                 {pokemonData && (
                     <div className="pokemon-details-card bg-red-700">
-                        <Title>#{pokemonData.id}: {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</Title>
+                        <div className="pokemon-details-title">
+                            <Title>#{pokemonData.id}: {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</Title>
+                            <button className="poke-font bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" style={{textTransform: "uppercase"}}>
+                                Add To ❤️
+                            </button>
+                        </div>
                         <div className="images">
                             <img src={pokemonData.sprites.front_default} alt="pokemon image" />
                         </div>

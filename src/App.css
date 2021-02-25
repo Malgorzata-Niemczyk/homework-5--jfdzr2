@@ -28,7 +28,7 @@
   color: white;
 }
 
-/*POKEMON DETAILS CARD*/
+/*POKEMON PROFILE CARD*/
 .pokemon-details-card {
   display: flex;
   flex-direction: column;
@@ -76,4 +76,12 @@
 .pokemon-details-abilities-info span {
   display: inline-block;
   background-color: rgb(35, 167, 167);
+}
+
+.pokemon-details-title {
+  display: flex;
+}
+
+.pokemon-details-title button {
+  margin-left: 20px;
 }
