@@ -10,12 +10,18 @@ export function Pokemons() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [currentPageUrl, setCurrentPageUrl] = useState('https://pokeapi.co/api/v2/pokemon')
-
+  const [currentPageUrl, setCurrentPageUrl] = useState('https://pokeapi.co/api/v2/pokemon');
+  const [nextPageUrl, setNextPageUrl] = useState()
+  const [previousPageUrl, setPreviousPageUrl] = useState();
+  
   useEffect(() => {
-    axios.get(currentPageUrl)
+    let cancel;
+    axios.get(currentPageUrl, {cancelToken: new axios.CancelToken(c => cancel = c)})
       .then(res => {
+        // console.log(res.data)
         setPokemons(res.data.results)
+        setNextPageUrl(res.data.next);
+        setPreviousPageUrl(res.data.previous);
         setIsLoading(false);
         setError(false);
       })
@@ -25,7 +31,9 @@ export function Pokemons() {
         setErrorMessage('Could not fetch the data :(')
         setIsLoading(false);
       })
-  }, []);
+
+      return () => cancel();
+  }, [currentPageUrl]);
 
   return (
     <Page>
