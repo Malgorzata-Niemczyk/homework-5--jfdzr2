@@ -43,7 +43,22 @@ const PokemonDetails = () => {
                             <p>Species: {pokemonData.species.name}</p>
                             <p>Height: {Math.round(pokemonData.height) / 10} m</p>
                             <p>Weight: {Math.round(pokemonData.weight) / 10} kg</p>
-                            <p>Types: </p>
+                            <p>Types:</p>
+                            <div className="pokemon-details-types-info">
+                                {pokemonData.types.map(typeItem => {
+                                    return <span key={typeItem.type.name}>
+                                            {`${typeItem.type.name}`}
+                                        </span>
+                                })} 
+                            </div>
+                            <p>Abilities:</p>
+                            <div className="pokemon-details-abilities-info">
+                                {pokemonData.abilities.map(abilityItem => {
+                                    return <span key={abilityItem.ability.name}>
+                                            {`${abilityItem.ability.name}`}
+                                        </span>
+                                })} 
+                            </div>
                         </div>
                     </div>
                 )}
