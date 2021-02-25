@@ -85,3 +85,13 @@
 .pokemon-details-title button {
   margin-left: 20px;
 }
+
+/*PAGINATION BUTTONS*/
+.pagination-buttons-wrapper {
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.pagination-buttons-wrapper button {
+  text-transform: uppercase;
+}
