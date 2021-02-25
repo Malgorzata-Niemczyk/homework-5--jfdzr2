@@ -41,8 +41,8 @@ const PokemonDetails = () => {
                         <div className="pokemon-details-card-text">
                             <h3>Pokemon Info</h3>
                             <p>Species: </p>
-                            <p>Height: {pokemonData.height}</p>
-                            <p>Weight: {pokemonData.weight}</p>
+                            <p>Height: {Math.round(pokemonData.height) / 10} m</p>
+                            <p>Weight: {Math.round(pokemonData.weight) / 10} kg</p>
                             <p>Types: </p>
                         </div>
                     </div>
