@@ -10,9 +10,10 @@ export function Pokemons() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [currentPageUrl, setCurrentPageUrl] = useState('https://pokeapi.co/api/v2/pokemon')
 
   useEffect(() => {
-    axios.get('https://pokeapi.co/api/v2/pokemon')
+    axios.get(currentPageUrl)
       .then(res => {
         setPokemons(res.data.results)
         setIsLoading(false);
