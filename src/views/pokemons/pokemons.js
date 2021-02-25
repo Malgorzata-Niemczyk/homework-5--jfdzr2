@@ -40,8 +40,6 @@ export function Pokemons() {
   };
 
   const handleGoToPreviousPage = () => {
-    // checking if there are any more pages after pressing the prev button
-    if (previousPageUrl === null) return;
     setCurrentPageUrl(previousPageUrl)
   };
 
@@ -51,12 +49,12 @@ export function Pokemons() {
         { error ? (<p className="text-white poke-font py-6 text-center">{ errorMessage }</p>) : null }
         { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
         <div className="pagination-buttons-wrapper flex poke-font">
-          <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handleGoToPreviousPage}>
+          {previousPageUrl ? <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handleGoToPreviousPage}>
             Prev
-          </button>
-          <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handleGoToNextPage}>
+          </button> : null}
+          {nextPageUrl ? <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handleGoToNextPage}>
             Next
-          </button>
+          </button> : null}
         </div>
         <ol className="pokemons-list-wrapper">
           { pokemons && pokemons.map((pokemon, index) =>
