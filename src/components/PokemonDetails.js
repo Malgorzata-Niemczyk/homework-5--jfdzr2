@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { Page } from "./page";
 import { Title } from "./title";
 import { pokemonTypesColors } from "../components/pokemonTypesColors";
 
 const PokemonDetails = () => {
     const { id } = useParams();
+    const history = useHistory();
     const [pokemonData, setPokemonData] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -30,6 +31,9 @@ const PokemonDetails = () => {
 
     return (
         <Page>
+            <button class="poke-font bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" style={{textTransform: "uppercase"}} onClick={() => history.push('/pokemons')}>
+                ◀️ Back to Pokemons List
+            </button>
             <div className="pokemon-details-wrapper text-white poke-font">
                 { error ? (<p className="poke-font py-6 text-center">{ errorMessage }</p>) : null }
                 { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
