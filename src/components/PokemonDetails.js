@@ -40,7 +40,7 @@ const PokemonDetails = () => {
                         </div>
                         <div className="pokemon-details-card-text">
                             <h3>Pokemon Info</h3>
-                            <p>Species: {pokemonData.species.name}</p>
+                            <p>Species: <span style={{color: 'lightskyblue'}}>{pokemonData.species.name}</span></p>
                             <p>Height: {Math.round(pokemonData.height) / 10} m</p>
                             <p>Weight: {Math.round(pokemonData.weight) / 10} kg</p>
                             <p>Types:</p>

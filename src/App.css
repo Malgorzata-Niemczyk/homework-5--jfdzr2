@@ -55,5 +55,25 @@
 
 .pokemon-details-card-text p {
   text-align: center;
-  padding: 8px 0;
+  padding: 10px 0;
+}
+
+.pokemon-details-types-info, .pokemon-details-abilities-info {
+  text-align: center;
+  margin: 10px;
+}
+
+.pokemon-details-types-info span, .pokemon-details-abilities-info span {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.pokemon-details-types-info span {
+  background-color: purple;
+}
+
+.pokemon-details-abilities-info span {
+  display: inline-block;
+  background-color: rgb(35, 167, 167);
 }
