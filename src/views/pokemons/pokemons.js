@@ -4,7 +4,6 @@ import { Title } from "../../components/title";
 import { useState, useEffect } from 'react';
 import PokemonsList from "../../components/PokemonsList"
 import axios from "axios";
-import PaginationButtons from "../../components/PaginationButtons";
 
 export function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
@@ -49,10 +48,14 @@ export function Pokemons() {
       <Title>Pokemons list</Title>
         { error ? (<p className="text-white poke-font py-6 text-center">{ errorMessage }</p>) : null }
         { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
-        <PaginationButtons 
-          goToNextPageFunction={handleGoToNextPage}
-          gottoPreviousPageFunction={handleGoToPreviousPage}
-        />
+        <div className="pagination-buttons-wrapper flex poke-font">
+          <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handleGoToPreviousPage}>
+            Prev
+          </button>
+          <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handleGoToNextPage}>
+            Next
+          </button>
+        </div>
         <ol className="pokemons-list-wrapper">
           { pokemons && pokemons.map((pokemon, index) =>
             <PokemonsList key={`${pokemon.name} - ${index + 1}`} pokemons={pokemon} index={index} /> )}
