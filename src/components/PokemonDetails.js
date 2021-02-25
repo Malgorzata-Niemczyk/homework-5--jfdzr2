@@ -31,7 +31,7 @@ const PokemonDetails = () => {
 
     return (
         <Page>
-            <button class="poke-font bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" style={{textTransform: "uppercase"}} onClick={() => history.push('/pokemons')}>
+            <button className="poke-font bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" style={{textTransform: "uppercase"}} onClick={() => history.push('/pokemons')}>
                 ◀️ Back to Pokemons List
             </button>
             <div className="pokemon-details-wrapper text-white poke-font">
