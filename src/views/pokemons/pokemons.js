@@ -36,12 +36,23 @@ export function Pokemons() {
       return () => cancel();
   }, [currentPageUrl]);
 
+  const handleGoToNextPage = () => {
+    setCurrentPageUrl(nextPageUrl)
+  };
+
+  const handleGoToPreviousPage = () => {
+    setCurrentPageUrl(previousPageUrl)
+  };
+
   return (
     <Page>
       <Title>Pokemons list</Title>
         { error ? (<p className="text-white poke-font py-6 text-center">{ errorMessage }</p>) : null }
         { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
-        <PaginationButtons />
+        <PaginationButtons 
+          goToNextPageFunction={handleGoToNextPage}
+          gottoPreviousPageFunction={handleGoToPreviousPage}
+        />
         <ol className="pokemons-list-wrapper">
           { pokemons && pokemons.map((pokemon, index) =>
             <PokemonsList key={`${pokemon.name} - ${index + 1}`} pokemons={pokemon} index={index} /> )}
