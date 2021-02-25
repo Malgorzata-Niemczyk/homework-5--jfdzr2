@@ -33,7 +33,7 @@ export function Pokemons() {
         { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
         <ol className="pokemons-list-wrapper">
           { pokemons && pokemons.map((pokemon, index) =>
-            <PokemonsList key={`${pokemon.name} - ${index}`} pokemons={pokemon} index={index} /> )}
+            <PokemonsList key={`${pokemon.name} - ${index + 1}`} pokemons={pokemon} index={index} /> )}
         </ol>
         
       {/* <p className="text-white py-6 text-center">

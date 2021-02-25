@@ -15,7 +15,7 @@ const PokemonsList = ({ pokemons, index }) => {
     }, [pokemons]);
 
     return ( 
-        <Link to={`/pokemons/${pokemons.id}`}>
+        <Link to={`/pokemons/${index + 1}`}>
             <li className="pokemon-card poke-font hover:bg-red-700 cursor-pointer">
                 <img src={pokemonPic} alt="Pokemon image" />
                 <p>#{index + 1}</p>

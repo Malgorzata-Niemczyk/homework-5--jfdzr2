@@ -6,7 +6,7 @@ import { Title } from "./title";
 import { pokemonTypesColors } from "../components/pokemonTypesColors";
 
 const PokemonDetails = () => {
-    const { id } = useParams();
+    const { index } = useParams();
     const history = useHistory();
     const [pokemonData, setPokemonData] = useState();
     const [isLoading, setIsLoading] = useState(true);
@@ -14,7 +14,7 @@ const PokemonDetails = () => {
     const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(() => {
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${index}`)
             .then(res => {
                 // console.log(res.data)
                 setPokemonData(res.data);
@@ -27,7 +27,7 @@ const PokemonDetails = () => {
                 setErrorMessage('Pokemon not found!');
                 setIsLoading(false)
             })
-    }, [id]);
+    }, [index]);
 
     return (
         <Page>

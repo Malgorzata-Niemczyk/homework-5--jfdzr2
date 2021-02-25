@@ -47,7 +47,7 @@ function App() {
                     <Route exact path="/pokemons">
                       <Pokemons/>
                     </Route>
-                    <Route path="/pokemons/:id">
+                    <Route path="/pokemons/:index">
                       <PokemonDetails/>
                     </Route>
                     <Route path="/favourites">
