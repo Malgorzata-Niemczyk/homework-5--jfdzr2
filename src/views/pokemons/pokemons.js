@@ -16,6 +16,7 @@ export function Pokemons() {
       .then(res => {
         setPokemons(res.data.results)
         setIsLoading(false);
+        setError(false);
       })
       .catch((err) => {
         console.log(err)
@@ -31,8 +32,8 @@ export function Pokemons() {
         { error ? (<p className="text-white poke-font py-6 text-center">{ errorMessage }</p>) : null }
         { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
         <ol className="pokemons-list-wrapper">
-          { pokemons && pokemons.map((pokemons, index) =>
-            <PokemonsList key={`${pokemons.name} - ${index}`} pokemons={pokemons} index={index} /> )}
+          { pokemons && pokemons.map((pokemon, index) =>
+            <PokemonsList key={`${pokemon.name} - ${index}`} pokemons={pokemon} index={index} /> )}
         </ol>
         
       {/* <p className="text-white py-6 text-center">
