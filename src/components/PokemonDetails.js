@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Page } from "../components/page";
+import { Page } from "./page";
 import { Title } from "./title";
+import { pokemonTypesColors } from "../components/pokemonTypesColors";
 
 const PokemonDetails = () => {
     const { id } = useParams();
@@ -46,7 +47,7 @@ const PokemonDetails = () => {
                             <p>Types:</p>
                             <div className="pokemon-details-types-info">
                                 {pokemonData.types.map(typeItem => {
-                                    return <span key={typeItem.type.name}>
+                                    return <span style={{backgroundColor: pokemonTypesColors[typeItem.type.name]}} key={typeItem.type.name}>
                                             {`${typeItem.type.name}`}
                                         </span>
                                 })} 
