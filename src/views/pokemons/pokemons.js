@@ -40,6 +40,8 @@ export function Pokemons() {
   };
 
   const handleGoToPreviousPage = () => {
+    // checking if there are any more pages after pressing the prev button
+    if (previousPageUrl === null) return;
     setCurrentPageUrl(previousPageUrl)
   };
 
