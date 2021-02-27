@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
+import Navbar from "./components/Navbar";
 import PokemonDetails from "./components/PokemonDetails";
 import { Favourites } from "./views/favourites/favourites";
 import { Home } from "./views/home/home";
@@ -26,19 +27,7 @@ function App() {
       <main className="App bg-red-100" style={{minHeight: '100vh'}}>
         <div className="w-6/12 pt-4 mx-auto">
             <div>
-              <nav>
-                <ul className="flex poke-font justify-between">
-                  <li className="mr-4">
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li className="mr-4">
-                    <Link to="/pokemons">Pokemons</Link>
-                  </li>
-                  <li className="mr-4">
-                    <Link to="/favourites">Favourites</Link>
-                  </li>
-                </ul>
-              </nav>
+              <Navbar />
                 <div className="content">
                   <Switch>
                     <Route exact path="/">
