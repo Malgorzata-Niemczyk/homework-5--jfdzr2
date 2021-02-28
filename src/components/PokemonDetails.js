@@ -63,7 +63,7 @@ const PokemonDetails = () => {
             types: pokemonData.types
         };
 
-        if (favourites.length > 6) {
+        if (favourites.length > 5) {
             favourites.shift()
         };
 
