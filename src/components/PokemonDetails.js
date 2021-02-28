@@ -63,6 +63,10 @@ const PokemonDetails = () => {
             types: pokemonData.types
         };
 
+        if (favourites.length > 6) {
+            favourites.shift()
+        };
+
         setFavourites([...favourites, favPokemonItem]);
     }
 
