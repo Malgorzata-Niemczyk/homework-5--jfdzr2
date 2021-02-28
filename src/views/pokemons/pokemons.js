@@ -4,6 +4,7 @@ import { Title } from "../../components/title";
 import { useState, useEffect } from 'react';
 import PokemonsList from "../../components/PokemonsList"
 import axios from "axios";
+import Pagination from "../../components/Pagination";
 
 export function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
@@ -48,17 +49,18 @@ export function Pokemons() {
       <Title>Pokemons list</Title>
         { error ? (<p className="text-white poke-font py-6 text-center">{ errorMessage }</p>) : null }
         { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
-        <div className="pagination-buttons-wrapper flex poke-font">
-          {previousPageUrl ? <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handleGoToPreviousPage}>
-            Prev
-          </button> : null}
-          {nextPageUrl ? <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handleGoToNextPage}>
-            Next
-          </button> : null}
-        </div>
+        <Pagination 
+          goToPrevPage={previousPageUrl ? handleGoToPreviousPage : null}
+          goToNextPage={nextPageUrl ? handleGoToNextPage : null}
+        />
         <ol className="pokemons-list-wrapper">
           { pokemons && pokemons.map((pokemon, index) =>
-            <PokemonsList key={`${pokemon.name} - ${index + 1}`} pokemons={pokemon} index={index} /> )}
+            <PokemonsList 
+              key={`${pokemon.name} - ${index + 1}`} 
+              pokemons={pokemon} 
+              index={index} 
+            /> 
+          )}
         </ol>
         
       {/* <p className="text-white py-6 text-center">
