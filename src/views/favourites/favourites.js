@@ -1,7 +1,9 @@
 import React from 'react'
+// import { findRenderedComponentWithType } from 'react-dom/test-utils';
 import { Page } from '../../components/page'
 import { Title } from '../../components/title'
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import PokemonProfile from '../../components/PokemonProfile';
 
 // const examplePokemon = {
 //   id: 1,
@@ -27,9 +29,29 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 // };
 
 export const Favourites = () => {
+  const [favourites, setFavourites] = useLocalStorage('favourite-pokemons');
+
+  // console.log(favourites);
+
+  // if (favourites) {
+  //   favourites.forEach(favourite => console.log(favourite));
+  // };
+
   return (
     <Page>
       <Title>Favourites</Title>
+        <div className="grid grid-rows-2 grid-flow-col gap-4">
+          { favourites && favourites.forEach(favourite => {
+            // console.log(favourite)
+            <PokemonProfile 
+              key={favourite.id}
+              name={favourite.name}
+              types={favourite.types}
+              avatar={favourite.avatar}
+              id={favourite.id}
+            />
+          }) }
+        </div>
 
       {/* <p className="text-white py-6 text-center">
         Here will be list of saved pokemons from localStorage
