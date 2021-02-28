@@ -11,7 +11,7 @@ const Navbar = () => {
                     <Link to="/pokemons">Pokemons</Link>
                 </li>
                 <li className="mr-4 text-center">
-                    <Link to="/favourites">Favourites❤️<span>(0)</span></Link>
+                    <Link to="/favourites">Favourites❤️</Link>
                 </li>
             </ul>
         </nav>
