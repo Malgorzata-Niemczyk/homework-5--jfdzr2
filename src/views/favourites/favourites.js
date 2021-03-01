@@ -31,26 +31,21 @@ import PokemonProfile from '../../components/PokemonProfile';
 export const Favourites = () => {
   const [favourites, setFavourites] = useLocalStorage('favourite-pokemons');
 
-  // console.log(favourites);
-
-  // if (favourites) {
-  //   favourites.forEach(favourite => console.log(favourite));
-  // };
-
   return (
     <Page>
       <Title>Favourites</Title>
-        <div className="grid grid-rows-2 grid-flow-col gap-4">
-          { favourites && favourites.forEach(favourite => {
-            // console.log(favourite)
+        <div className="pokemons-fav-list-wrapper mt-8 poke-font text-xs">
+          { favourites ? favourites.map((favourite, index) => 
             <PokemonProfile 
-              key={favourite.id}
+              key={`${favourite.name} - ${index}`} 
               name={favourite.name}
               types={favourite.types}
               avatar={favourite.avatar}
-              id={favourite.id}
+              id={favourite.id} 
             />
-          }) }
+          ) : 
+          (<div className="poke-font text-white text-center mt-7">There are no pokemons in your favourites list</div>)
+          }
         </div>
 
       {/* <p className="text-white py-6 text-center">
