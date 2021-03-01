@@ -55,7 +55,14 @@ const PokemonDetails = () => {
             })
     }, [index]);
 
-    const handleAddToFavPokemons = () => {
+    const handleAddToFavPokemons = (event) => {
+        // to disable a button when a pokemon is added to favourites
+        if (event.target.disabled = true) {
+            event.target.style.color = 'grey';
+            event.target.style.cursor = "not-allowed";
+            event.target.textContent = "ADDED TO 🖤"
+        };
+
         let favPokemonItem = {
             id: pokemonData.id,
             name: pokemonData.name,
@@ -85,7 +92,7 @@ const PokemonDetails = () => {
                             <button 
                                 className="poke-font bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" 
                                 style={{textTransform: "uppercase"}}
-                                onClick={handleAddToFavPokemons}
+                                onClick={(event) => handleAddToFavPokemons(event)}
                             >
                                 Add To ❤️
                             </button>
