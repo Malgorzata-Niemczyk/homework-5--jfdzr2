@@ -13,30 +13,7 @@ const PokemonDetails = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-    const [favourites, setFavourites] = useLocalStorage('favourite-pokemons', [
-        {
-            id: 1,
-            name: "bulbasaur",
-            avatar:
-                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/1.png",
-            types: [
-                {
-                slot: 1,
-                type: {
-                    name: "grass",
-                    url: "https://pokeapi.co/api/v2/type/12/",
-                },
-                },
-                {
-                slot: 2,
-                type: {
-                    name: "poison",
-                    url: "https://pokeapi.co/api/v2/type/4/",
-                },
-                },
-            ], 
-        }
-    ]);
+    const [favourites, setFavourites] = useLocalStorage('favourite-pokemons', []);
 
 
     useEffect(() => {
