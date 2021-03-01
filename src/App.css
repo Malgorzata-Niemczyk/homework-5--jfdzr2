@@ -10,19 +10,12 @@
   text-align: center;
 }
 
-.pokemons-fav-list-wrapper {
+.pokemons-list-wrapper,.pokemons-fav-list-wrapper {
   gap: 20px;
 }
 
 /*POKEMON CARD FROM A LIST*/
 .pokemon-card {
-  display: flex;
-  flex-direction: column;
-  max-width: 250px;
-  max-height: 2800px;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 20px;
   background-color: white;
   transition: color 0.3s, background-color 0.3s;
 }

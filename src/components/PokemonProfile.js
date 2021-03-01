@@ -4,11 +4,11 @@ const PokemonProfile = ({id, name, avatar, types}) => {
 
     return ( 
         <Link to={`/pokemons/${id}`}>
-            <figure className="max-w-xs bg-gray-100 rounded-xl p-4">
+            <figure className="pokemon-card max-w-xs bg-gray-100 rounded-xl p-4 hover:bg-red-700 cursor-pointer">
                 <img
                     className="w-32 h-32 rounded-full mx-auto"
                     src={avatar}
-                    alt=""
+                    alt="Pokemon Avatar"
                     width="384"
                     height="512"
                 />
