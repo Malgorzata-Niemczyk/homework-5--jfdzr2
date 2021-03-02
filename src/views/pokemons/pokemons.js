@@ -11,7 +11,11 @@ export function Pokemons() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [currentPageUrl, setCurrentPageUrl] = useState('https://pokeapi.co/api/v2/pokemon');
+  const [page, setPage] = useState(0);
+  const [total, setTotal] = useState(0);
+  let limit = 20;
+  let offset = 0;
+  const [currentPageUrl, setCurrentPageUrl] = useState(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
   const [nextPageUrl, setNextPageUrl] = useState()
   const [previousPageUrl, setPreviousPageUrl] = useState();
   
@@ -23,6 +27,7 @@ export function Pokemons() {
         setPokemons(res.data.results)
         setNextPageUrl(res.data.next);
         setPreviousPageUrl(res.data.previous);
+        setTotal(Math.ceil(res.data.count / 20))
         setIsLoading(false);
         setError(false);
       })
@@ -37,11 +42,15 @@ export function Pokemons() {
   }, [currentPageUrl]);
 
   const handleGoToNextPage = () => {
-    setCurrentPageUrl(nextPageUrl)
+    setCurrentPageUrl(nextPageUrl);
+    const nextPage = Math.min(page + 1, total - 1);
+    setPage(nextPage);
   };
 
   const handleGoToPreviousPage = () => {
     setCurrentPageUrl(previousPageUrl)
+    const prevPage = Math.max(page - 1, 0);
+    setPage(prevPage);
   };
 
   return (
@@ -49,7 +58,9 @@ export function Pokemons() {
       <Title>Pokemons list</Title>
         { error ? (<p className="text-white poke-font py-6 text-center">{ errorMessage }</p>) : null }
         { isLoading && <p className="text-white poke-font py-6 text-center">Loading...</p> }
-        <Pagination 
+        <Pagination
+          page={page + 1}
+          totalPages={total}
           goToPrevPage={previousPageUrl ? handleGoToPreviousPage : null}
           goToNextPage={nextPageUrl ? handleGoToNextPage : null}
         />
