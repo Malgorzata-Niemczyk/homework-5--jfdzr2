@@ -2,20 +2,23 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom"
 
-const PokemonsList = ({ pokemons, index }) => {
+const PokemonsList = ({ pokemons }) => {
     // console.log(pokemons)
 
     const [pokemonPic, setPokemonPic] = useState('');
+    const [pokemonID, setPokemonID] = useState();
 
     useEffect(() => {
        axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemons.name}`)
         .then(res => {
-            setPokemonPic(res.data.sprites.front_default)
+            // console.log(res.data)
+            setPokemonPic(res.data.sprites.front_default);
+            setPokemonID(res.data.id);
         })
     }, [pokemons]);
 
     return ( 
-        <Link to={`/pokemons/${index + 1}`}>
+        <Link to={`/pokemons/${pokemonID}`}>
             <figure className="pokemon-card max-w-xs bg-gray-100 rounded-xl p-4 poke-font hover:bg-red-700 cursor-pointer">
                 <img
                     className="w-32 h-32 rounded-full mx-auto"
@@ -24,7 +27,7 @@ const PokemonsList = ({ pokemons, index }) => {
                 />
                 <div className="pt-4 text-center">
                     <figcaption className="font-medium">
-                        <div className="text-cyan-600">#{index + 1}</div>
+                        <div className="text-cyan-600">#{pokemonID}</div>
                         <div className="text-cyan-600">{pokemons.name}</div>
                     </figcaption>
                 </div>
