@@ -17,3 +17,6 @@
 ![](./screenshots/fav-button-1.PNG) 
 ![](./screenshots/fav-button-2.PNG)
 
+### The above issues - No 1 and 2 - have been fixed in the following way:
+
+ - By taking the ID of each pokemon out of the pokeApi when fetching the data from the props that were passed in the PokemonsList component, and the useState hook was used to get this value from this fetch and the value received was outputted in the JSX template and in the Link component. It is instead of using the value of an index that caused this issue.
