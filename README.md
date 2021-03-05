@@ -1,51 +1,43 @@
 # Praca domowa nr 5
 
+Link to - [My Pokedex](https://malgorzata-niemczyk.github.io/jfdzr2-homework-5/)
+
 ## Pokedex
 
-Używając Pokemon API stwórz POKEDEX :)
+This is a homework activity assigned on a React module while taking the Front-end Developer course at InfoShare Academy. The aim of this activity is to create POKEDEX using Pokemon API :)
 
 PokeApi - https://pokeapi.co/api/v2/
 
-Instrukcje odnośnie tego co trzeba zrobić znajdują się kolejno w plikach.
-
-Nie piszę ich tutaj, ponieważ zdarza się, że ktoś nawet nie zajrzy do repozytorium i robi po swojemu.
-
-## Czego się nauczysz wykonując to zadanie domowe na poważnie
+## Topics that are covered in this task
 
 * Routing
-* Integracja z zewnętrznym API
-* Praca z hookami
-* Integracja z localStorage
-* Renderowanie elementów
-* Tworzenie komponentów
+* Integration with an external API
+* Handling hooks
+* Integration with localStorage
+* Rendering the elements
+* Creating components
 
-Wszystkie te rzeczy mogą i powinny zostać wykorzystane w projekcie, nie bój się dodawać własnych komponentów, zobacz jak stworzone zostały przykładowe dwa.
 
-Potrzebne paczki są już zainstalowane.
+## Scores for The Task
 
-Do stylowania użyłem tailwind.css natomiast śmiało można dodawać własne pliki do stylowania.
+Correct routing - 2 pkt
 
-## Punktacja
+Fetching the pokemons list and displaying it - 2 pkt
 
-Poprawny routing - 2 pkt
+Handling intermediate states - 1 pkt
 
-Pobieranie listy pokemnów i jej wyświetlanie - 2 pkt
+Adding to Favourites - 1 pkt
 
-Obsługa stanów pośrednich - 1 pkt
+Displaying the data from the localStorage on the Favourites page - 2 pkt
 
-Dodawanie do Ulubionych - 1 pkt
-
-Wyświetlenie z localStorage danych na stronie Ulubionych - 2 pkt
-
-Widok szczegółowy pokemona - 3 pkt (+ dodawanie do ulubionych)
+Page with a detailed description of a pokemon - 3 pkt (+ adding to Favourites)
 
 ### Extra
 
-PREV i NEXT buttons + współpraca ze stronnicowanym API - 2 pkt
+PREV i NEXT buttons + handling API pagination - 2 pkt
 
-Nałożenie limitu 6 pokemonów w sekcji Ulubione i wyrzucanie pierwszego dodanego, gdy dołożymy ponad limit - 2 pkt
+Setting the limit of 6 pokemons on The Favourites page and removing the first added pokemon from this page when a user adds a pokemon over this limit - 2 pkt
 
-## Termin 10.03.2021 do godziny 23:59
 
 ------------------------------------
 
