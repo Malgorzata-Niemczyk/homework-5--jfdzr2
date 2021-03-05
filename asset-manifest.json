@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/jfdzr2-homework-5/static/css/main.3a22703e.chunk.css",
+    "main.js": "/jfdzr2-homework-5/static/js/main.42e1f6fb.chunk.js",
+    "main.js.map": "/jfdzr2-homework-5/static/js/main.42e1f6fb.chunk.js.map",
+    "runtime-main.js": "/jfdzr2-homework-5/static/js/runtime-main.7ad4b1b8.js",
+    "runtime-main.js.map": "/jfdzr2-homework-5/static/js/runtime-main.7ad4b1b8.js.map",
+    "static/js/2.912cd6de.chunk.js": "/jfdzr2-homework-5/static/js/2.912cd6de.chunk.js",
+    "static/js/2.912cd6de.chunk.js.map": "/jfdzr2-homework-5/static/js/2.912cd6de.chunk.js.map",
+    "index.html": "/jfdzr2-homework-5/index.html",
+    "static/css/main.3a22703e.chunk.css.map": "/jfdzr2-homework-5/static/css/main.3a22703e.chunk.css.map",
+    "static/js/2.912cd6de.chunk.js.LICENSE.txt": "/jfdzr2-homework-5/static/js/2.912cd6de.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/jfdzr2-homework-5/static/media/pokemon-font.902a8775.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7ad4b1b8.js",
+    "static/js/2.912cd6de.chunk.js",
+    "static/css/main.3a22703e.chunk.css",
+    "static/js/main.42e1f6fb.chunk.js"
+  ]
+}
