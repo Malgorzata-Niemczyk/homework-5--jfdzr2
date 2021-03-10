@@ -29,7 +29,7 @@ import PokemonProfile from '../../components/PokemonProfile';
 // };
 
 export const Favourites = () => {
-  const [favourites, setFavourites] = useLocalStorage('favourite-pokemons');
+  const [favourites, setFavourites] = useLocalStorage('favourite-pokemons', []);
 
   return (
     <Page>
