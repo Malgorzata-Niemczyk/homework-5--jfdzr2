@@ -2,6 +2,23 @@
   font-family: "pokemon-font";
 }
 
+
+/* NAVIGATION */
+@media screen and (max-width: 375px) {
+  .app-wrapper {
+    max-width: 100vw;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    padding-top: 10px;
+  }
+}
+
+
 /*POKEMON LIST*/
 .pokemons-list-wrapper, .pokemons-fav-list-wrapper {
   display: grid;
