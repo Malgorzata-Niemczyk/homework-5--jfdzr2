@@ -25,7 +25,7 @@ function App() {
   return (
     <Router>
       <main className="App bg-red-100" style={{minHeight: '100vh'}}>
-        <div className="w-6/12 pt-4 mx-auto">
+        <div className="app-wrapper w-10/12 pt-4 mx-auto">
             <div>
               <Navbar />
                 <div className="content">
