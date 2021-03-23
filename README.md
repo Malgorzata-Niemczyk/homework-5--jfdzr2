@@ -1,6 +1,6 @@
 # Praca domowa nr 5
 
-Link to - [My Pokedex](https://malgorzata-niemczyk.github.io/jfdzr2-homework-5/)
+Link to - [My Pokedex](https://malgorzata-niemczyk.github.io/homework-5-jfdzr2-pokedex/)
 
 ## Pokedex
 
