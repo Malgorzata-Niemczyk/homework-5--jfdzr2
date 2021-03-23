@@ -32,14 +32,7 @@ const PokemonDetails = () => {
             })
     }, [index]);
 
-    const handleAddToFavPokemons = (event) => {
-        // to disable a button when a pokemon is added to favourites
-        if (event.target.disabled = true) {
-            event.target.style.color = 'grey';
-            event.target.style.cursor = "not-allowed";
-            event.target.textContent = "ADDED TO 🖤"
-        };
-
+    const handleAddToFavPokemons = () => {
         let favPokemonItem = {
             id: pokemonData.id,
             name: pokemonData.name,
@@ -66,13 +59,26 @@ const PokemonDetails = () => {
                     <div className="pokemon-details-card bg-red-700">
                         <div className="pokemon-details-title">
                             <Title>#{pokemonData.id}: {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</Title>
-                            <button 
-                                className="poke-font bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" 
-                                style={{textTransform: "uppercase"}}
-                                onClick={(event) => handleAddToFavPokemons(event)}
-                            >
-                                Add To ❤️
-                            </button>
+                            { favourites.map(favourite => favourite.name).includes(pokemonData.name) ? 
+                                (<button 
+                                    className="poke-font bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" 
+                                    style={{
+                                        textTransform: "uppercase",
+                                        color: "grey",
+                                        cursor: "not-allowed"
+                                    }}
+                                    disabled={true}
+                                >
+                                    Added To 🖤
+                                </button>) :
+                                (<button 
+                                    className="poke-font bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" 
+                                    style={{textTransform: "uppercase"}}
+                                    onClick={handleAddToFavPokemons}
+                                    >
+                                     Add To ❤️
+                                </button>)                  
+                            }
                         </div>
                         <div className="images">
                             <img src={pokemonData.sprites.front_default} alt="pokemon image" />

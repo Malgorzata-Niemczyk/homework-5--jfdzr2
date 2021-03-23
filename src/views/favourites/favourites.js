@@ -29,13 +29,13 @@ import PokemonProfile from '../../components/PokemonProfile';
 // };
 
 export const Favourites = () => {
-  const [favourites, setFavourites] = useLocalStorage('favourite-pokemons');
+  const [favourites, setFavourites] = useLocalStorage('favourite-pokemons', []);
 
   return (
     <Page>
       <Title>Favourites</Title>
         <div className="pokemons-fav-list-wrapper mt-8 poke-font text-xs">
-          { favourites ? favourites.map((favourite, index) => 
+          { favourites.length ? favourites.map((favourite, index) => 
             <PokemonProfile 
               key={`${favourite.name} - ${index}`} 
               name={favourite.name}

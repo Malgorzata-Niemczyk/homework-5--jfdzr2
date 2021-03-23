@@ -20,3 +20,7 @@
 ### The above issues - No 1 and 2 - have been fixed in the following way:
 
  - By taking the ID of each pokemon out of the pokeApi when fetching the data from the props that were passed in the PokemonsList component, and the useState hook was used to get this value from this fetch and the value received was outputted in the JSX template and in the Link component. It is instead of using the value of an index that caused this issue.
+
+ ### The above issue - No 3 - has been fixed in the following way:
+
+ - in the PokemonDetails.js a map() method has been used to map through the favourites array to check whether it includes the same data (like a name of the pokemon) as the state of the pokemonData and depending on that a different button is displayed.
