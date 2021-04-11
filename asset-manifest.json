@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/homework-5-jfdzr2-pokedex/static/css/main.4edfadd4.chunk.css",
-    "main.js": "/homework-5-jfdzr2-pokedex/static/js/main.62bedb32.chunk.js",
-    "main.js.map": "/homework-5-jfdzr2-pokedex/static/js/main.62bedb32.chunk.js.map",
+    "main.js": "/homework-5-jfdzr2-pokedex/static/js/main.64f7c1d8.chunk.js",
+    "main.js.map": "/homework-5-jfdzr2-pokedex/static/js/main.64f7c1d8.chunk.js.map",
     "runtime-main.js": "/homework-5-jfdzr2-pokedex/static/js/runtime-main.735d49b7.js",
     "runtime-main.js.map": "/homework-5-jfdzr2-pokedex/static/js/runtime-main.735d49b7.js.map",
-    "static/js/2.912cd6de.chunk.js": "/homework-5-jfdzr2-pokedex/static/js/2.912cd6de.chunk.js",
-    "static/js/2.912cd6de.chunk.js.map": "/homework-5-jfdzr2-pokedex/static/js/2.912cd6de.chunk.js.map",
+    "static/js/2.91ef12e0.chunk.js": "/homework-5-jfdzr2-pokedex/static/js/2.91ef12e0.chunk.js",
+    "static/js/2.91ef12e0.chunk.js.map": "/homework-5-jfdzr2-pokedex/static/js/2.91ef12e0.chunk.js.map",
     "index.html": "/homework-5-jfdzr2-pokedex/index.html",
     "static/css/main.4edfadd4.chunk.css.map": "/homework-5-jfdzr2-pokedex/static/css/main.4edfadd4.chunk.css.map",
-    "static/js/2.912cd6de.chunk.js.LICENSE.txt": "/homework-5-jfdzr2-pokedex/static/js/2.912cd6de.chunk.js.LICENSE.txt",
+    "static/js/2.91ef12e0.chunk.js.LICENSE.txt": "/homework-5-jfdzr2-pokedex/static/js/2.91ef12e0.chunk.js.LICENSE.txt",
     "static/media/index.css": "/homework-5-jfdzr2-pokedex/static/media/pokemon-font.902a8775.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.735d49b7.js",
-    "static/js/2.912cd6de.chunk.js",
+    "static/js/2.91ef12e0.chunk.js",
     "static/css/main.4edfadd4.chunk.css",
-    "static/js/main.62bedb32.chunk.js"
+    "static/js/main.64f7c1d8.chunk.js"
   ]
 }
