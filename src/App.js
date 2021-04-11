@@ -1,7 +1,7 @@
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Navbar";
-import PokemonDetails from "./components/PokemonDetails";
+import PokemonDetails from "./views/pokemons/PokemonDetails";
 import { Favourites } from "./views/favourites/favourites";
 import { Home } from "./views/home/home";
 import { Pokemons } from "./views/pokemons/pokemons";

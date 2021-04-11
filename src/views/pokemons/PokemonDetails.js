@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { Page } from "./page";
-import { Title } from "./title";
-import { pokemonTypesColors } from "../components/pokemonTypesColors";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { Page } from "../../components/page";
+import { Title } from "../../components/title";
+import { pokemonTypesColors } from "../../components/pokemonTypesColors";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 const PokemonDetails = () => {
     const { index } = useParams();
