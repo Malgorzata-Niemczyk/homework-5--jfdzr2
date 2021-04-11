@@ -2,7 +2,7 @@ import { Page } from "../../components/page";
 import { Title } from "../../components/title";
 // import { pokeApiResponse } from "../../utils/sampleResponse";
 import { useState, useEffect } from 'react';
-import PokemonsList from "../../components/PokemonsList"
+import PokemonsList from "./PokemonsList"
 import axios from "axios";
 import Pagination from "../../components/Pagination";
 

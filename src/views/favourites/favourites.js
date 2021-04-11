@@ -3,7 +3,7 @@ import React from 'react'
 import { Page } from '../../components/page'
 import { Title } from '../../components/title'
 import { useLocalStorage } from '../../hooks/useLocalStorage';
-import PokemonProfile from '../../components/PokemonProfile';
+import PokemonProfile from './PokemonProfile';
 
 // const examplePokemon = {
 //   id: 1,
@@ -29,7 +29,7 @@ import PokemonProfile from '../../components/PokemonProfile';
 // };
 
 export const Favourites = () => {
-  const [favourites, setFavourites] = useLocalStorage('favourite-pokemons', []);
+  const [favourites] = useLocalStorage('favourite-pokemons', []);
 
   return (
     <Page>
