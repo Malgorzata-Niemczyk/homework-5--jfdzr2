@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Title: React.FC<{className: string}> = ({ children, className, ...props }) => {
+export const Title: React.FC<{className?: string}> = ({ children, className, ...props }) => {
   return (
     <h1
       className={`poke-font text-2xl text-center mt-2 text-white font-bold ${
