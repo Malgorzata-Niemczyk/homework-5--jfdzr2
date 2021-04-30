@@ -35,9 +35,9 @@ export const Favourites = () => {
     <Page>
       <Title>Favourites</Title>
         <div className="pokemons-fav-list-wrapper mt-8 poke-font text-xs">
-          { favourites.length ? favourites.map((favourite: any) => 
+          { favourites.length ? favourites.map((favourite: any, index: number) => 
             <PokemonProfile 
-              key={`${favourite.name} - ${favourite.id}`} 
+              key={`${favourite.name} - ${index}`} 
               name={favourite.name}
               types={favourite.types}
               avatar={favourite.avatar}
