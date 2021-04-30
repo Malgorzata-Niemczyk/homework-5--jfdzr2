@@ -29,15 +29,15 @@ import PokemonProfile from './PokemonProfile';
 // };
 
 export const Favourites = () => {
-  const [favourites] = useLocalStorage('favourite-pokemons', []);
+  const [favourites] = useLocalStorage('favourite-pokemons', [] as any);
 
   return (
     <Page>
       <Title>Favourites</Title>
         <div className="pokemons-fav-list-wrapper mt-8 poke-font text-xs">
-          { favourites.length ? favourites.map((favourite, index) => 
+          { favourites.length ? favourites.map((favourite: any) => 
             <PokemonProfile 
-              key={`${favourite.name} - ${index}`} 
+              key={`${favourite.name} - ${favourite.id}`} 
               name={favourite.name}
               types={favourite.types}
               avatar={favourite.avatar}
