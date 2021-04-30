@@ -48,7 +48,7 @@ const PokemonDetails = () => {
             })
     }, [index]);
 
-    const handleAddToFavPokemons = () => {
+    const handleAddToFavPokemons: React.MouseEventHandler<HTMLButtonElement> = (pokemonData: any) => {
         let favPokemonItem = {
             id: pokemonData.id,
             name: pokemonData.name,
