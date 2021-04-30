@@ -32,11 +32,20 @@ const PokemonDetails = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [favourites, setFavourites] = useLocalStorage('favourite-pokemons', [] as any);
 
+    const [avatar, setAvatar] = useState('');
+    const [types, setTypes] = useState<any>();
+    const [name, setName] = useState('');
+    const [id, setId] = useState<number>();
+
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${index}`)
             .then(res => {
                 // console.log(res.data)
                 setPokemonData(res.data);
+                setAvatar(res.data.sprites.front_default);
+                setTypes(res.data.types.map((typeItem: any) => typeItem.type.name));
+                setName(res.data.name);
+                setId(res.data.id);
                 setIsLoading(false);
                 setError(false);
             })
@@ -48,12 +57,12 @@ const PokemonDetails = () => {
             })
     }, [index]);
 
-    const handleAddToFavPokemons: React.MouseEventHandler<HTMLButtonElement> = (pokemonData: any) => {
+    const handleAddToFavPokemons: React.MouseEventHandler<HTMLButtonElement> = () => {
         let favPokemonItem = {
-            id: pokemonData.id,
-            name: pokemonData.name,
-            avatar: pokemonData.sprites.front_default,
-            types: pokemonData.types
+            id,
+            name,
+            avatar,
+            types
         };
 
         if (favourites.length > 5) {

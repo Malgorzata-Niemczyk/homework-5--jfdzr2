@@ -21,7 +21,7 @@ const PokemonProfile = ({id, name, avatar, types}: IPokemonProfileProps) => {
                 <div className="pt-4 text-center">
                     <figcaption className="font-medium">
                         <div className="text-cyan-600">#{id} {name}</div>
-                        <div className="text-gray-500">{types.map(({type}: any) => type.name).join(', ')}</div>
+                        <div className="text-gray-500">{types.join(', ')}</div>
                     </figcaption>
                 </div>
             </figure> 
