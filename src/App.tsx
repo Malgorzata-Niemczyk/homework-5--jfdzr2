@@ -21,7 +21,7 @@ If you get stuck here refer to first pages of react-router documentation. I lite
 * Later you'll have to comeback here to add additional route for /pokemons/:id but you'll know it when you get there
 */
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <main className="App bg-red-100" style={{minHeight: '100vh'}}>

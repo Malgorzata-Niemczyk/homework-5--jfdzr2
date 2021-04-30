@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
  
-const Navbar = () => {
+const Navbar: React.FC = () => {
     return ( 
         <nav>
             <ul className="flex poke-font justify-between">
