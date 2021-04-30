@@ -17,10 +17,8 @@ interface IPokemonData {
     sprites: {
         front_default: string
     }
-    types: [{
-        name: string
-    }],
-    abilities: []
+    types: string[],
+    abilities: string[]
 }
 
 const PokemonDetails = () => {
