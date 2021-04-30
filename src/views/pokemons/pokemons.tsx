@@ -46,13 +46,13 @@ export function Pokemons() {
       return () => cancel();
   }, [currentPageUrl]);
 
-  const handleGoToNextPage: React.MouseEventHandler = () => {
+  const handleGoToNextPage: React.MouseEventHandler<HTMLButtonElement> = () => {
     setCurrentPageUrl(nextPageUrl);
     const nextPage = Math.min(page + 1, total - 1);
     setPage(nextPage);
   };
 
-  const handleGoToPreviousPage: React.MouseEventHandler = () => {
+  const handleGoToPreviousPage: React.MouseEventHandler<HTMLButtonElement> = () => {
     setCurrentPageUrl(previousPageUrl)
     const prevPage = Math.max(page - 1, 0);
     setPage(prevPage);
