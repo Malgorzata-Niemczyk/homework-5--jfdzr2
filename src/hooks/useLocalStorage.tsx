@@ -1,8 +1,8 @@
 import React from 'react'
 
 export const useLocalStorage = (
-  key,
-  initialValue = "",
+  key: string,
+  initialValue: any = "",
   { serialize = JSON.stringify, deserialize = JSON.parse } = {}
 ) => {
   const [state, setState] = React.useState(() => {
@@ -12,7 +12,7 @@ export const useLocalStorage = (
     }
     return typeof initialValue === "function" ? initialValue() : initialValue;
   });
-  const prevKey = React.useRef(key);
+  const prevKey: any = React.useRef(key);
   React.useEffect(() => {
     if (prevKey.current !== key) {
       window.localStorage.removeItem(prevKey);
