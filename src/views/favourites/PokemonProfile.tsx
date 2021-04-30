@@ -4,7 +4,7 @@ interface IPokemonProfileProps {
     id: string | number,
     name: string,
     avatar: string,
-    types: []
+    types: string[]
 }
 
 const PokemonProfile = ({id, name, avatar, types}: IPokemonProfileProps) => {
