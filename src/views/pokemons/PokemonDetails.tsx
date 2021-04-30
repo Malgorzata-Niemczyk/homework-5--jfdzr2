@@ -6,15 +6,31 @@ import { Title } from "../../components/title";
 import { pokemonTypesColors } from "../../components/pokemonTypesColors";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
+interface IPokemonData {
+    id: number,
+    name: string,
+    species: {
+        name: string
+    }
+    height: number,
+    weight: number,
+    sprites: {
+        front_default: string
+    }
+    types: [{
+        name: string
+    }],
+    abilities: []
+}
+
 const PokemonDetails = () => {
-    const { index } = useParams();
+    const { index } = useParams() as {index: string | number};
     const history = useHistory();
-    const [pokemonData, setPokemonData] = useState();
+    const [pokemonData, setPokemonData] = useState<IPokemonData>();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-    const [favourites, setFavourites] = useLocalStorage('favourite-pokemons', []);
-
+    const [favourites, setFavourites] = useLocalStorage('favourite-pokemons', [] as any);
 
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${index}`)
@@ -59,7 +75,7 @@ const PokemonDetails = () => {
                     <div className="pokemon-details-card bg-red-700">
                         <div className="pokemon-details-title">
                             <Title>#{pokemonData.id}: {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</Title>
-                            { favourites.map(favourite => favourite.name).includes(pokemonData.name) ? 
+                            { favourites.map((favourite: any) => favourite.name).includes(pokemonData.name) ? 
                                 (<button 
                                     className="poke-font bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" 
                                     style={{
@@ -90,7 +106,7 @@ const PokemonDetails = () => {
                             <p>Weight: {Math.round(pokemonData.weight) / 10} kg</p>
                             <p>Types:</p>
                             <div className="pokemon-details-types-info">
-                                {pokemonData.types.map(typeItem => {
+                                {pokemonData.types.map((typeItem: any) => {
                                     return <span style={{backgroundColor: pokemonTypesColors[typeItem.type.name]}} key={typeItem.type.name}>
                                             {`${typeItem.type.name}`}
                                         </span>
@@ -98,7 +114,7 @@ const PokemonDetails = () => {
                             </div>
                             <p>Abilities:</p>
                             <div className="pokemon-details-abilities-info">
-                                {pokemonData.abilities.map(abilityItem => {
+                                {pokemonData.abilities.map((abilityItem: any) => {
                                     return <span key={abilityItem.ability.name}>
                                             {`${abilityItem.ability.name}`}
                                         </span>
