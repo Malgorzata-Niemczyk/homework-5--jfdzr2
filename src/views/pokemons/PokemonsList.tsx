@@ -2,11 +2,18 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom"
 
-const PokemonsList = ({ pokemons, id }) => {
+interface IPokemonProps {
+    id: number | string,
+    pokemons: {
+        name: string
+    }
+}
+
+const PokemonsList = ({ pokemons, id }: IPokemonProps) => {
     // console.log(pokemons)
 
     const [pokemonPic, setPokemonPic] = useState('');
-    const [pokemonID, setPokemonID] = useState();
+    const [pokemonID, setPokemonID] = useState<number>();
 
     useEffect(() => {
        axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
