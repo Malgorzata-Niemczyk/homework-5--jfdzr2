@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/homework-5-jfdzr2-pokedex/static/css/main.4edfadd4.chunk.css",
-    "main.js": "/homework-5-jfdzr2-pokedex/static/js/main.64f7c1d8.chunk.js",
-    "main.js.map": "/homework-5-jfdzr2-pokedex/static/js/main.64f7c1d8.chunk.js.map",
+    "main.js": "/homework-5-jfdzr2-pokedex/static/js/main.9512c102.chunk.js",
+    "main.js.map": "/homework-5-jfdzr2-pokedex/static/js/main.9512c102.chunk.js.map",
     "runtime-main.js": "/homework-5-jfdzr2-pokedex/static/js/runtime-main.735d49b7.js",
     "runtime-main.js.map": "/homework-5-jfdzr2-pokedex/static/js/runtime-main.735d49b7.js.map",
     "static/js/2.91ef12e0.chunk.js": "/homework-5-jfdzr2-pokedex/static/js/2.91ef12e0.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.735d49b7.js",
     "static/js/2.91ef12e0.chunk.js",
     "static/css/main.4edfadd4.chunk.css",
-    "static/js/main.64f7c1d8.chunk.js"
+    "static/js/main.9512c102.chunk.js"
   ]
 }
