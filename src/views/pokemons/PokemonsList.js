@@ -2,20 +2,20 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom"
 
-const PokemonsList = ({ pokemons }) => {
+const PokemonsList = ({ pokemons, id }) => {
     // console.log(pokemons)
 
     const [pokemonPic, setPokemonPic] = useState('');
     const [pokemonID, setPokemonID] = useState();
 
     useEffect(() => {
-       axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemons.name}`)
+       axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .then(res => {
             // console.log(res.data)
             setPokemonPic(res.data.sprites.front_default);
             setPokemonID(res.data.id);
         })
-    }, [pokemons]);
+    }, [id]);
 
     return ( 
         <Link to={`/pokemons/${pokemonID}`}>

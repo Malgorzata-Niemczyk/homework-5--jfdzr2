@@ -6,8 +6,13 @@ import PokemonsList from "./PokemonsList"
 import axios from "axios";
 import Pagination from "../../components/Pagination";
 
+interface IPokemon {
+  name: string,
+  url: string
+}
+
 export function Pokemons() {
-  const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState<IPokemon[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -16,11 +21,11 @@ export function Pokemons() {
   let limit = 20;
   let offset = 0;
   const [currentPageUrl, setCurrentPageUrl] = useState(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
-  const [nextPageUrl, setNextPageUrl] = useState()
-  const [previousPageUrl, setPreviousPageUrl] = useState();
+  const [nextPageUrl, setNextPageUrl] = useState('')
+  const [previousPageUrl, setPreviousPageUrl] = useState('');
   
   useEffect(() => {
-    let cancel;
+    let cancel: any;
     axios.get(currentPageUrl, {cancelToken: new axios.CancelToken(c => cancel = c)})
       .then(res => {
         // console.log(res.data)
@@ -65,11 +70,11 @@ export function Pokemons() {
           goToNextPage={nextPageUrl ? handleGoToNextPage : null}
         />
         <ol className="pokemons-list-wrapper">
-          { pokemons && pokemons.map((pokemon, index) =>
+          { pokemons && pokemons.map((pokemon) =>
             <PokemonsList 
-              key={`${pokemon.name} - ${index + 1}`} 
+              key={`${pokemon.name} - ${pokemon.url.split('/')[6]}`} 
               pokemons={pokemon} 
-              index={index} 
+              id={pokemon.url.split('/')[6]} 
             /> 
           )}
         </ol>
