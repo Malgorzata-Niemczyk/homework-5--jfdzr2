@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 
-const PokemonProfile = ({id, name, avatar, types}) => {
+interface IPokemonProfileProps {
+    id: string | number,
+    name: string,
+    avatar: string,
+    types: []
+}
 
+const PokemonProfile = ({id, name, avatar, types}: IPokemonProfileProps) => {
     return ( 
         <Link to={`/pokemons/${id}`}>
             <figure className="pokemon-card max-w-xs bg-gray-100 rounded-xl p-4 hover:bg-red-700 cursor-pointer">
@@ -15,7 +21,7 @@ const PokemonProfile = ({id, name, avatar, types}) => {
                 <div className="pt-4 text-center">
                     <figcaption className="font-medium">
                         <div className="text-cyan-600">#{id} {name}</div>
-                        <div className="text-gray-500">{types.map(({type}) => type.name).join(', ')}</div>
+                        <div className="text-gray-500">{types.map(({type}: any) => type.name).join(', ')}</div>
                     </figcaption>
                 </div>
             </figure> 
