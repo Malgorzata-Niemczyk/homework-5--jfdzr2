@@ -16,12 +16,16 @@ const PokemonsList = ({ pokemons, id }: IPokemonProps) => {
     const [pokemonID, setPokemonID] = useState<number>();
 
     useEffect(() => {
-       axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        .then(res => {
-            // console.log(res.data)
-            setPokemonPic(res.data.sprites.front_default);
-            setPokemonID(res.data.id);
+        let cancel: any;
+        
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`, {cancelToken: new axios.CancelToken(c => cancel = c)})
+            .then(res => {
+                // console.log(res.data)
+                setPokemonPic(res.data.sprites.front_default);
+                setPokemonID(res.data.id);
         })
+
+        return () => cancel();
     }, [id]);
 
     return ( 

@@ -26,6 +26,7 @@ export function Pokemons() {
   
   useEffect(() => {
     let cancel: any;
+    
     axios.get(currentPageUrl, {cancelToken: new axios.CancelToken(c => cancel = c)})
       .then(res => {
         // console.log(res.data)
